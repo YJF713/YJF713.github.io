@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="课堂笔记1029  总结回顾  JSP/Servlet一、相同点： 处理后台逻辑，作为mvc控制；  共9个内置对象(request、response、session、application、page、out、config、pageContext、exception)   内置对象作用域：page &amp;lt; request/response &amp;lt; session &amp;lt; applicatio">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-29T08:03:15.306Z">
+<meta property="og:updated_time" content="2019-10-29T08:22:42.545Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jsp1029">
 <meta name="twitter:description" content="课堂笔记1029  总结回顾  JSP/Servlet一、相同点： 处理后台逻辑，作为mvc控制；  共9个内置对象(request、response、session、application、page、out、config、pageContext、exception)   内置对象作用域：page &amp;lt; request/response &amp;lt; session &amp;lt; applicatio">
@@ -183,19 +183,22 @@
 <li>共9个内置对象(request、response、session、application、page、out、config、pageContext、exception)</li>
 </ol>
 <ul>
-<li><p>内置对象作用域：page &lt; request/response &lt; session &lt; application。</p>
+<li>内置对象作用域：page &lt; request/response &lt; session &lt; application。</li>
+</ul>
 <pre><code>page.setAttribute(&quot;username&quot;,&quot;sam&quot;); 
 String id = page.getAttribute(&quot;username&quot;);
 
 request.setAttribute(&quot;username&quot;,&quot;sam&quot;); 
-String id = request.getAttribute(&quot;&gt;username&quot;); </code></pre></li>
-</ul>
-<pre><code>session.setAttribute(&quot;username&quot;,&quot;sam&quot;); 
+String id = request.getAttribute(&quot;&gt;username&quot;); 
+
+session.setAttribute(&quot;username&quot;,&quot;sam&quot;); 
 String id = session.getAttribute(&quot;username&quot;);
 
 application.setAttribute(&quot;username&quot;,&quot;sam&quot;); 
 String id = application.getAttribute(&quot;username&quot;);</code></pre><ol start="3">
-<li>都可用Java语言。<h1 id="不同点："><a href="#不同点：" class="headerlink" title="不同点："></a>不同点：</h1></li>
+<li>都可用Java语言。</li>
+</ol>
+<h1 id="不同点："><a href="#不同点：" class="headerlink" title="不同点："></a>不同点：</h1><ol>
 <li>JSP可作为前端显示页面，Servlet只能作后台控制； </li>
 <li>JSP可内嵌html、EL、JSTL和Java，而Servlet只能有Java； </li>
 <li>JSP控制不需要项目中去注册、而Servlet必须注册(web.xml/注解) </li>
