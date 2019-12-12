@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>AJAX介绍和详细代码 | Hexo</title>
+  <title>jsp汇总 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Ajax一、 Ajax名称：Asynchronous JavaScript And XML 二、什么是Ajax  AJAX引擎其实是一个JavaScript对象，全写是 window.XMLHttpRequest对象，由于浏览器的版本不同，特别是老版本的IE浏览器，虽然也支持AJAX引擎，但是写法上有区别，在IE低版本中通常用 ActiveXObject对象来创建AJAX引擎。 AJAX 来自英文">
+  <meta name="description" content="Servlet相关题目 Servlet生命周期a) 加载Servlet  web容器负责加载servlet，当web容器启动时或者是在第一次使用这个servlet时，容器会负责创建servlet实例  初始化  当一个servlet加载后，容器将调用init（）方法初始化这个对象，初始化的目的是为了让servlet在处理客户端请求前完成一些初始化的工作  请求处理  当有请求提交时，servlet">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AJAX介绍和详细代码">
-<meta property="og:url" content="http://yoursite.com/2019/12/12/AJAX介绍和详细代码/index.html">
+<meta property="og:title" content="jsp汇总">
+<meta property="og:url" content="http://yoursite.com/2019/12/12/jsp_EL_对象的介绍_tomcat_servlet汇总/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Ajax一、 Ajax名称：Asynchronous JavaScript And XML 二、什么是Ajax  AJAX引擎其实是一个JavaScript对象，全写是 window.XMLHttpRequest对象，由于浏览器的版本不同，特别是老版本的IE浏览器，虽然也支持AJAX引擎，但是写法上有区别，在IE低版本中通常用 ActiveXObject对象来创建AJAX引擎。 AJAX 来自英文">
+<meta property="og:description" content="Servlet相关题目 Servlet生命周期a) 加载Servlet  web容器负责加载servlet，当web容器启动时或者是在第一次使用这个servlet时，容器会负责创建servlet实例  初始化  当一个servlet加载后，容器将调用init（）方法初始化这个对象，初始化的目的是为了让servlet在处理客户端请求前完成一些初始化的工作  请求处理  当有请求提交时，servlet">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-12T07:05:50.549Z">
+<meta property="og:updated_time" content="2019-12-12T08:29:00.950Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AJAX介绍和详细代码">
-<meta name="twitter:description" content="Ajax一、 Ajax名称：Asynchronous JavaScript And XML 二、什么是Ajax  AJAX引擎其实是一个JavaScript对象，全写是 window.XMLHttpRequest对象，由于浏览器的版本不同，特别是老版本的IE浏览器，虽然也支持AJAX引擎，但是写法上有区别，在IE低版本中通常用 ActiveXObject对象来创建AJAX引擎。 AJAX 来自英文">
+<meta name="twitter:title" content="jsp汇总">
+<meta name="twitter:description" content="Servlet相关题目 Servlet生命周期a) 加载Servlet  web容器负责加载servlet，当web容器启动时或者是在第一次使用这个servlet时，容器会负责创建servlet实例  初始化  当一个servlet加载后，容器将调用init（）方法初始化这个对象，初始化的目的是为了让servlet在处理客户端请求前完成一些初始化的工作  请求处理  当有请求提交时，servlet">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,107 +154,363 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-AJAX介绍和详细代码" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-jsp_EL_对象的介绍_tomcat_servlet汇总" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      AJAX介绍和详细代码
+      jsp汇总
     </h1>
   
 
         
-        <a href="/2019/12/12/AJAX介绍和详细代码/" class="archive-article-date">
-  	<time datetime="2019-12-12T06:54:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-12</time>
+        <a href="/2019/12/12/jsp_EL_对象的介绍_tomcat_servlet汇总/" class="archive-article-date">
+  	<time datetime="2019-12-12T08:06:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h1><p>一、 Ajax名称：Asynchronous JavaScript And XML</p>
-<p>二、什么是Ajax</p>
-<ul>
-<li>AJAX引擎其实是一个JavaScript对象，全写是 window.XMLHttpRequest对象，由于浏览器的版本不同，特别是老版本的IE浏览器，虽然也支持AJAX引擎，但是写法上有区别，在IE低版本中通常用 ActiveXObject对象来创建AJAX引擎。 AJAX 来自英文“Asynchronous Javascript And XML” 的缩写，也称为异步JavaScript和XML。 简言之，就是一个JS对象，可以实现在网页加载完成以后，不用刷新的情况下与服务器交互。产生极好的用户体验效果。</li>
-</ul>
-<p>三、技术范围： Ajax是几种技术的整合： JavaScript 、XML和CSS ，其中最主要的是JavaScript。</p>
-<p>四、特点：Ajax不采用请求/响应的方式，不需要重新加载页面。用户发送请求得到响应这个过程，用户体验的连续的。</p>
-<p>五、分类：</p>
-<ol>
-<li>JS方式:Ajax通过JavaScript的XMLHttpRequest对象完成一步发送请求到服务器并获取返回结果（可以是XML、文本、JSON）的任务，然后使用JavaScript更新局部页面。</li>
-<li>JQuery方式;主要有以下三个方法：<br>$ajax()           $get()            $post()</li>
+        <h2 id="Servlet相关题目"><a href="#Servlet相关题目" class="headerlink" title="Servlet相关题目"></a>Servlet相关题目</h2><ol>
+<li>Servlet生命周期<br>a) 加载Servlet</li>
 </ol>
-<h2 id="jQuery-代码："><a href="#jQuery-代码：" class="headerlink" title="jQuery 代码："></a>jQuery 代码：</h2><pre><code>$(document).ready(function(){
-$(&quot;#b01&quot;).click(function(){
-htmlobj=$.ajax({url:&quot;/jquery/test1.txt&quot;,async:false});
-$(&quot;#myDiv&quot;).html(htmlobj.responseText);
-});
-});</code></pre><hr>
-<h1 id="AJAX请求步骤详细代码"><a href="#AJAX请求步骤详细代码" class="headerlink" title="AJAX请求步骤详细代码"></a>AJAX请求步骤详细代码</h1><h2 id="客户端代码-reg-html"><a href="#客户端代码-reg-html" class="headerlink" title="客户端代码 reg.html"></a>客户端代码 reg.html</h2><pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;meta charset=&quot;utf-8&quot;/&gt;
-&lt;title&gt;AJAX引擎实现用户名重名检测&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;form&gt;
-&lt;p&gt;用户名：&lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot;/&gt; &lt;span  id=&quot;result&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;密码：&lt;input type=&quot;password&quot; name=&quot;pwd1&quot;/&gt;&lt;/p&gt;
-&lt;p&gt;确认密码：&lt;input type=&quot;password&quot; name=&quot;pwd2&quot;/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;立即注册&quot;/&gt;&lt;/p&gt;
-&lt;/form&gt;
-
-&lt;script type=&quot;text/javascript&quot;&gt;
-var username=document.getElementById(&apos;username&apos;);
-
-//用户名输入框失去焦点时触发
-username.onblur=function(){
-
-//主角登场——AJAX引擎的创建及使用详细代码来了
-var ajax=new XMLHttpRequest(); //创建AJAX引擎实例
-
-//创建GET请求，发送请求时传username值
-ajax.open(&apos;GET&apos;,&apos;check.php?username=&apos;+this.value); 
-//当AJAX引擎的状态产生改变时触发onreadystatechange属性指向的函数（多次执行）
-//状态值有5个：0 1 2 3 4 ，其中4表示服务器端响应就绪
-ajax.onreadystatechange=function(){
-//必须在服务器响应就绪，并且HTTP的状态码是200时才接收数据
-//ajax.readyState 获取到服务器响应状态码，必须是4才表示就绪
-//ajax.status 获取到HTTP的状态码，必须是200才表示成功
-if(ajax.readyState==4 &amp;&amp; ajax.status==200){
-//ajax.responseText 接收服务器响应回来的内容
-//console.log(ajax.responseText);
-//接收到服务器响应数据后，AJAX工作已完成，可根据结果显示提示信息
-
-If(ajax.responseText==&apos;1&apos;){
-result.innerHTML=&apos;该用户名太受欢迎，请重新选择&apos;;
-result.style.color=&apos;#f00&apos;; //将字体设置为红色
-}else{
-result.innerHTML=&apos;恭喜你，可以注册&apos;;
-result.style.color=&apos;#0a0&apos;; //将字体设置为绿色
+<p>web容器负责加载servlet，当web容器启动时或者是在第一次使用这个servlet时，容器会负责创建servlet实例</p>
+<ul>
+<li>初始化</li>
+</ul>
+<p>当一个servlet加载后，容器将调用init（）方法初始化这个对象，初始化的目的是为了让servlet在处理客户端请求前完成一些初始化的工作</p>
+<ul>
+<li>请求处理</li>
+</ul>
+<p>当有请求提交时，servlet将调用service（）方法进行处理客户端请求，并且会根据不同的请求调用不同的doGet（）或doPost（）方法</p>
+<ul>
+<li>销毁</li>
+</ul>
+<p>当web容器关闭或检测到一个servlet实例要从服务器中被移除时，容器就会调用destroy（）方法，以便让该实例释放掉所占用的资源</p>
+<ol start="2">
+<li>什么是servlet？</li>
+</ol>
+<p>servlet是用来处理客户端请求并产生动态网页内容的java类。</p>
+<ol start="3">
+<li><p>在程序里怎样注册Servlet.<br>配置文件添加信息：Web.xml中创建servlet标签。</p>
+<pre><code>&lt;servlet&gt;
+    &lt;display-name&gt;显示名字&lt;/display-name&gt;
+&lt;servlet-name&gt;名字&lt;/servlet-name&gt;
+&lt;servlet-class&gt;项目中包名、类名&lt;/servlet-class&gt;
+&lt;/servlet&gt;
+&lt;servlet-mapping&gt;
+&lt;servlet-name&gt;名字&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;url地址&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;</code></pre></li>
+</ol>
+<p>注解的方式：</p>
+<pre><code>@WebServlet(“/XXServlet”)
+Public class XXServlet extends HttpServlet{}</code></pre><ol start="4">
+<li>什么是 request 对象？</li>
+</ol>
+<p>答：request 对象是 javax.servlet.http.HttpServletRequest 对象的一个实例。每次客户端请求一个页面时，JSP 引擎都会创建一个新的对象来表示这个请求。<br>request 对象为获取 HTTP 头信息提供方法，这些头信息包括表单数据、 cookie、 HTTP 方法等等。</p>
+<ol start="5">
+<li>Request对象的主要方法有哪些？</li>
+</ol>
+<p>setAttribute(String name,Object)：设置名字为name的request的参数值</p>
+<p>getAttribute(String name)：返回由name指定的属性值</p>
+<p>getAttributeNames()：返回request对象所有属性的名字集合，结果是一个枚举的实例</p>
+<p>getCookies()：返回客户端的所有Cookie对象，结果是一个Cookie数组</p>
+<p>getCharacterEncoding()：返回请求中的字符编码方式</p>
+<p>getContentLength()：返回请求的Body的长度</p>
+<p>实例</p>
+<p>getInputStream()：返回请求的输入流，用于获得请求中的数据</p>
+<p>getMethod()：获得客户端向服务器端传送数据的方法</p>
+<p>getParameter(String name)：获得客户端传送给服务器端的有name指定的参数值</p>
+<p>getParameterNames()：获得客户端传送给服务器端的所有参数的名字，结果是一个枚举的实例</p>
+<p>getParameterValues(String name)：获得有name指定的参数的所有值</p>
+<p>getProtocol()：获取客户端向服务器端传送数据所依据的协议名称</p>
+<p>getQueryString()：获得查询字符串</p>
+<p>getRequestURI()：获取发出请求字符串的客户端地址</p>
+<p>getRemoteAddr()：获取客户端的IP地址</p>
+<p>getRemoteHost()：获取客户端的名字</p>
+<p>getSession([Boolean create])：返回和请求相关Session</p>
+<p>getServerName()：获取服务器的名字</p>
+<p>getServletPath()：获取客户端所请求的脚本文件的路径</p>
+<p>getServerPort()：获取服务器的端口号</p>
+<p>removeAttribute(String name)：删除请求中的一个属性</p>
+<ol start="6">
+<li>什么是一个 response 对象？</li>
+</ol>
+<p>答：response 对象是 javax.servlet.http.HttpServletRequest 对象的一个实例。正如服务器创建请求对象，它还创建了一个对象来表示对客户端的响应。</p>
+<ol start="7">
+<li>什么是 session 对象？</li>
+</ol>
+<p>答：session 对象是 javax.servlet.http.HttpSession 的一个实例，它被用于在客户端请求之间跟踪客户端会话。</p>
+<ol start="8">
+<li>什么是一个应用程序对象？</li>
+</ol>
+<p>答：应用程序对象是为生成的 Servlet 围绕 ServletContext 对象的直接包装器，实际上是 javax.servlet.ServletContxet 对象的一个实例。</p>
+<p>这个对象是 JSP 页面的在整个生命周期上的一个表示。该对象的创建是在 JSP 页面初始化的时候，并且是在 JSP 页面被删除时通过 JSPDestroy() 方法删除的。</p>
+<ol start="9">
+<li>什么是一个 config 对象？</li>
+</ol>
+<p>答：config 对象是 javax.servlet.ServletConfig 的一个实例，是为生成的 Servlet 围绕 ServletConfig 对象的直接包装器。</p>
+<p>该对象允许 JSP 程序员有权访问 Servlet 或者 JSP 引擎初始化参数，比如路径或文件位置等等。</p>
+<ol start="10">
+<li>什么是一个 pageContext 对象？</li>
+</ol>
+<p>答：pageContext 对象是 javax.servlet.jsp.PageContext 对象的一个实例。pageContext 对象被用于表示整个 JSP 页面。</p>
+<p>该对象存储每一个请求的请求和响应对象的引用。应用程序、配置、会话，和外部对象的派生是通过访问该对象的属性生成的。</p>
+<p>pageContext 对象还包含发送给 JSP 页面的指令的信息，包括缓冲信息、错误的页面 URL，和页面范围。</p>
+<ol start="11">
+<li>什么是一个 page 对象？<br>答：该对象实际上是对页面实例的一个真正的引用。它可以被认为是一个表示整个 JSP 页面的一个对象。</li>
+</ol>
+<p>Page 对象实际上是这个对象的一个直接的同义词。</p>
+<ol start="12">
+<li>什么是一个 exception 对象？</li>
+</ol>
+<p>答：exception 对象是一个包装器，包含从上一个页面抛出的异常。它通常用于生成一个适当的错误条件的响应。</p>
+<ol start="13">
+<li>Java servlet API中forward() 与redirect()的区别？<br>forward保留request中所有值；redirect不保留。<br>Forward页面url不变化，redirect页面url变更。</li>
+</ol>
+<h2 id="JSP问答题"><a href="#JSP问答题" class="headerlink" title="JSP问答题"></a>JSP问答题</h2><ol>
+<li>什么是 JSP？</li>
+</ol>
+<p>答：JavaServer Pages(JSP) 是一项支持动态内容的 Web 网页的开发技术，它可以帮助开发人员通过利用特殊的 JSP 标签在 HTML 页面中插入Java代码，这些标签大部分都是以 &lt;% 和 %&gt; 为开始。</p>
+<ol start="2">
+<li>JSP有哪些内置对象?作用分别是什么?</li>
+</ol>
+<p>application对象代表应用程序上下文，它允许JSP页面与包括在同一应用程序中的任何Web组件共享信息。</p>
+<p>Config对象允许将初始化数据传递给一个JSP页面</p>
+<p>Exception对象含有只能由指定的JSP“错误处理页面”访问的异常数据。</p>
+<p>Out对象代表提供输出流的访问</p>
+<p>Page对象代表JSP页面对应的Servlet类实例</p>
+<p>PageContext对象是Jsp页面本身的上下文，它提供唯一一组方法来管理具有不同作用域的属性</p>
+<p>Request对象提供对Http请求数据的访问，同时还提供用于加入特定请求数据的上下文</p>
+<ol start="3">
+<li>JSP页面指令的各种属性是什么？</li>
+</ol>
+<p>答：页面指令包含以下13个属性。</p>
+<pre><code>Language、    extends、    import、    session、   isThreadSafe、    info、    errorPage、    isErrorpage、  contentType、    isELIgnored、    buffer、    autoFlush、    isScriptingEnabled</code></pre><ol start="4">
+<li>JSP和servlet的区别、共同点、各自应用的范围？</li>
+</ol>
+<ul>
+<li>JSP在本质上就是servlet，但两者的创建方式不一样，servlet完全是java程序代码构成擅长于流程控制和事务处理而通过的servlet类生成动态网页；JSP由HTML代码和JSP标签构成，可以方便的编写动态网页</li>
+<li>采用Servlet来控制业务流程；用JSP来生成动态网页</li>
+</ul>
+<ol start="5">
+<li>JSP中动态INCLUDE与静态INCLUDE的区别？</li>
+</ol>
+<p>如果文件仅仅是静态文件，那么这种包含仅仅是把包含文件的内容加到JSP文件中去，但这个被包含文件不会被JSP编译器执行。相反，如果这个被包含文件是动态的文件，那么他将被JSP编译器执行。如果是动态文件还可以用<a href="jsp:param" target="_blank" rel="noopener">jsp:param</a>传递参数</p>
+<ol start="6">
+<li>如何使用 JSP 读取 表单数据？</li>
+</ol>
+<p>答：JSP根据情况自动解析并使用下面的方法处理表单数据：<br>    getParameter()：调用 request.getParameter() 方法来获取一个表单参数的值。<br>    getParameterValues()：如果参数出现多次，调用该方法，返回多个值，例如复选框。</p>
+<ol start="7">
+<li>什么是 JSP 注释？</li>
+</ol>
+<p>答：JSP 注释标记的是 JSP容器忽略的文本或者语句。一个 JSP 注释在你想要隐藏或者“注释掉”你 JSP 页面的一部分时是很有用的。</p>
+<p>下面的 JSP 注释的语法：</p>
+<pre><code>&lt;%-- This is JSP comment --%&gt;
+8、什么是 JSP 指令？
+答：一个 JSP 指令影响着 servlet 类的总体结构。它通常具有以下形式：
+&lt;%@ directive attribute=&quot;value&quot; %&gt;</code></pre><ol start="9">
+<li>指令标签的类型是什么？</li>
+</ol>
+<p>答：指令标签的类型如下：</p>
+<pre><code>&lt;%@ page ... %&gt; : 定义 page-dependent 属性，例如脚本语言、错误页面、和缓冲需求。
+&lt;%@ include ... %&gt; : 在翻译阶段包含一个文件。
+&lt;%@ taglib ... %&gt; : 声明一个标签库，包含在页面中使用的自定义动作。</code></pre><ol start="10">
+<li>在JSP中如何写文本文件？</li>
+</ol>
+<p>使用PrintWriter对象，如：</p>
+<pre><code>&lt;%@ page import=”java.io.*” %&gt;
+&lt;%
+String str = “print me”;
+String nameOfTextFile = “/usr/anil/imp.txt”;
+try {
+PrintWriter pw = new PrintWriter(new File
+OutputStream(nameOfTextFile));
+pw.println(str);
+pw.close();
+} catch(IOException e) {
+out.println(e.getMessage());
 }
-}
-}
-ajax.send(); //发送请求
-}
-&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre><h2 id="服务器端代码-check-php"><a href="#服务器端代码-check-php" class="headerlink" title="服务器端代码 check.php"></a>服务器端代码 check.php</h2><pre><code>//服务器端的代码可以使用PHP编写，根据逻辑反馈数据给客户端实现验证功能
-$username=$_GET[&apos;username&apos;];
+%&gt;</code></pre><ol start="11">
+<li>什么是 JSP 操作？</li>
+</ol>
+<p>答：JSP 操作使用 XML 语法结构来控制 servlet 引擎的行为。你可以动态插入一个文件、重用 JavaBeans 组件、转发用户到另一个网页，或者为 Java 插件生成 HTML。</p>
+<p>它的语法如下：</p>
+<pre><code>&lt;jsp:action_name attribute=&quot;value&quot; /&gt;</code></pre><ol start="12">
+<li>一些 JSP 操作的名称？</li>
+</ol>
+<p>答：jsp:include， jsp:useBean， jsp:setProperty， jsp:getProperty， jsp:forward， jsp:plugin，jsp:element， jsp:attribute， jsp:body， jsp:text。</p>
+<h3 id="具体详情为：sp有哪些动作-作用分别是什么"><a href="#具体详情为：sp有哪些动作-作用分别是什么" class="headerlink" title="具体详情为：sp有哪些动作?作用分别是什么?"></a>具体详情为：sp有哪些动作?作用分别是什么?</h3><pre><code>&lt;jsp:param&gt;操作被用来以“名—值”队的形式为其他标签提供附加信息
+&lt;jsp:include&gt;操作允许在请求是在现成的JSP页面里包含静态或者动态资源
+&lt;jsp:forward&gt;操作允许将请求转发到另一个JSP、servlet或静态资源文件
+&lt;jsp:useBean&gt;标签用来在JSP页面中创建一个JavaBean实例并指定他的名字以及作用范围
+&lt;jsp:setProperty&gt;此操作和setBean一起协作，用来设置JavaBean的属性
+&lt;jsp:getProperty&gt;操作是对&lt;jsp:setProperty&gt;操作的补充，用来访问一个Bean的属性
+&lt;jsp:plugin&gt;用来产生客户端浏览器的特别标签，可以使用它来插入Applet和JavaBean
+&lt;jsp:fallback&gt;</code></pre><ol start="13">
+<li>什么是 <a href="jsp:useBean" target="_blank" rel="noopener">jsp:useBean</a> 操作？</li>
+</ol>
+<p>答：useBean 操作是非常通用的。它首先利用 id 和 scope 变量搜索一个现有的对象。如果没有找到一个对象，那么它试图创建一个指定的对象。<br>加载一个 bean 最简单的方法如下：</p>
+<pre><code>&lt;jsp:useBean id=&quot;name&quot; class=&quot;package.class&quot; /&gt;</code></pre><ol start="14">
+<li>什么是 <a href="jsp:forward" target="_blank" rel="noopener">jsp:forward</a> 操作？</li>
+</ol>
+<p>答：forward 操作终止当前的页面，并将请求转发给另一个资源，例如一个静态页面、另一个 JSP 页面，或者一个 Java Servlet。</p>
+<p>该操作的一个简单的语法如下：</p>
+<pre><code>&lt;jsp:forward page=&quot;Relative URL&quot; /&gt;</code></pre><ol start="15">
+<li>forward（转发）和redirect（重定向）的区别</li>
+</ol>
+<ul>
+<li>forward：requset.getRequsetDispatcher(“/<strong><em>.jsp”).forward(request,response)<br>　　  redirect：response.sendRedirect(“/</em></strong>.jsp”)</li>
+<li>forward是服务器端发起的请求；redirect是客户端发起的请求；</li>
+<li>forward只有一次请求；redirect会产生2次请求。</li>
+<li>forward数据会同时转发过去;redirect数据不会同时传递过去。</li>
+<li>forward 的url 不变化 redirect的url 变化</li>
+</ul>
+<ol start="16">
+<li>什么是cookie？什么是session？session和cookie的区别</li>
+</ol>
+<ul>
+<li>Cookie是客户端保存用户信息的一种机制，用来记录用户的一些信息，它的过期时间可以任意设置，如果不主动清除，很长一段时间都能保留</li>
+<li>Session是在无状态的HTTP协议下，服务端记录用户状态时用于标识具体用户的机制，它是在服务端保存的用来跟踪用户的状态的数据结构，可以保存在文件、数据库、或者集群中。</li>
+</ul>
+<ol start="17">
+<li>request.getAttribute()和request.getParameter()区别</li>
+</ol>
+<ul>
+<li>都是HttpServletRequest中的方法，用来传递数据的</li>
+<li>getParameter（）：响应的是web客户端向web服务端通过点击链接或提交按钮传递数据，代表HTTP请求数据；获取的是post/get传递的参数值<br>　———— getAttribute（）：是获取对象容器中的数据，获取的是session的值</li>
+<li>getParameter（）：只能得到String类型数据<br>　 ———-getAttribute（）：可以接受String类型，也可以是对象</li>
+</ul>
+<ol start="17">
+<li>在 HTTP 协议中 GET 和 POST 的区别？</li>
+</ol>
+<p>答：GET 方法发送添加到页面请求的编码后的用户信息。页面和编码信息是通过？符号分开的。这种请求方式直接将请求信息暴露在URL中。</p>
+<p>POST 方法将信息打包的方式与 GET 方法时一样的，但是而是将它放在 URL 中？的后面作为文本字符串进行发送，将它作为一个独立的消息发送。post请求方式将请求信息放置在报文体中，想获得请求信息必须解析报文</p>
+<ol start="19">
+<li>doGet与doPost方法的两个参数是什么?什么情况下调用</li>
+</ol>
+<ul>
+<li>HttpServletRequest和HttpServletResponse</li>
+<li>JSP页面中的form标签里的method属性为get时调用doGet（）为post时调用doPost（）；超链接跳转页面时调动的是doGet（）</li>
+</ul>
+<ol start="20">
+<li>你如何成功控制从一个JSP页面到另一个？</li>
+</ol>
+<p>答：使用下面的方法来成功控制请求从一个servlet到另一个servlet或一个JSP到另一个</p>
+<p>JSP：</p>
+<p>使用RequestDispatcher对象的forward方法完成控制。</p>
+<p>使用response.sendRedirect方法。</p>
+<ol start="21">
+<li><p>JSP页面可以处理HTML表单数据吗？<br>答：是的。然而，不同于Servlet，你不需要在JSP页面用特定的方法如doGet()和doPost()实现http协议。对于表单输入元素，你可以通过带有脚本小程序或表达式的请求隐式对象获得的数据。</p>
+</li>
+<li><p>什么是过滤器？（编码过滤器，登陆过滤器）<br>答：JSP 过滤器是 Java 类，它可以用于 JSP 编程中的以下目的：<br>它们在后台访问一个资源之前，拦截来自客户端的请求。<br>在它们将响应发送回客户端之前操作来自服务器的响应。</p>
+</li>
+<li><p>任何定义过滤器？<br>答：过滤器是在部署描述文件 web.xml 中定义的，然后映射到你的应用程序的部署描述文件的 servlet 或者 JSP 名称 或者 URL 模式。<br>当 JSP 容器启动 web 应用程序时，它创建一个过滤器的实例，该实例已经在部署描述文件中声明过了。过滤器按照他们在部署描述文件中声明的顺序执行。<br>叁、JSTL标签库问答题<br>什么是 JSTL？<br>JSTL（JSP Standard Tag Library)，JSP标准标签库，可以嵌入在jsp页面中使用标签的形式完成业务逻辑等功能。<br>jstl出现的目的同el一样也是要提到jsp页面中的脚本代码。JSTL标准标准标签库有5个子库，如下图： </p>
+</li>
+</ol>
+<p>JSTL核心库的常用标签</p>
+<pre><code>1）&lt;c:if&gt;标签</code></pre><p>2）&lt;c:for&gt;标签<br>3）ForEach<br>4）Out<br>5）Set<br>6）Choose<br>7）Remove</p>
+<h2 id="EL语言问答题"><a href="#EL语言问答题" class="headerlink" title="EL语言问答题"></a>EL语言问答题</h2><ol>
+<li><p>在 JSP EL 对象分别是什么？<br>答：JSP表达式语言支持下面的隐式对象</p>
+<pre><code>pageScope：变量范围是页面范围
+requestScope：变量范围是请求范围
+sessionScope：变量范围是会话范围
+applicationScope：变量范围是应用范围
+param：请求参数作为字符串
+paramValues：请求参数作为字符串集合
+headerHTTP：HTTP请求标头作为字符串
+headerValues：HTTP请求标头作为字符串集合
+initParam：上下文初始化参数
+cookie：Cookie值
+pageContext：当前页面的JSP PageContext对象</code></pre></li>
+<li><p>JavaWeb中四大域对象及作用范围</p>
+</li>
+</ol>
+<ul>
+<li>PageContext ： 作用范围在整个页面（一个页面）</li>
+<li>HttpRequest ： 作用范围在一次请求</li>
+<li>HttpSession ： 这是JavaWeb的一种会话机制，作用在整个会话中</li>
+<li>ServletContext ：作用范围在整个web应用</li>
+</ul>
+<h2 id="TOMCAT服务器"><a href="#TOMCAT服务器" class="headerlink" title="TOMCAT服务器"></a>TOMCAT服务器</h2><ol>
+<li>Tomcat 是什么？有什么作用？</li>
+</ol>
+<p>Tomacat是由Apache推出的一款免费开源的Servlet容器，可实现JavaWeb程序的装载，是配置JSP（Java Server Page）和JAVA系统必备的一款环境。</p>
+<p>Tomcat不仅仅是一个Servlet容器，它也具有传统的Web服务器的功能：处理Html页面。但是与Apache相比，在处理静态Html上的能力略逊一筹。</p>
+<ol start="2">
+<li>简单说说tomcat的配置？</li>
+</ol>
+<p>JAVA_HOME=JDK的根目录</p>
+<p>CATALINA_HOME=tomcat的根目录</p>
+<p>CATALINA-HOME\conf\server.xml:可以配置tomcat的端口，可以配置tomcat中下连接池。</p>
+<p>CATALINA-HOME\common\lib:存放公用的类包</p>
+<ol start="3">
+<li>Tomcat有几种部署方式？</li>
+</ol>
+<ul>
+<li>第一种：直接将web项目文件拷贝到webapps目录中</li>
+<li>第二种：修改server.xml文件。在conf下的server.xml文件里找到Host标签，在里面添加</li>
+</ul>
+<p>如下代码：</p>
+<pre><code>&lt;Context path=&quot;/jfinal_demo&quot; docBase=&quot;F:\work\jfinal_demo\WebRoot&quot;  reloadable =&quot;true&quot; debug=&quot;0&quot; privileged=&quot;true&quot;&gt;&lt;/Context&gt;</code></pre><ul>
+<li>第三种：在conf\Catalina\localhost目录下添加xml配置文件<br>新建名为jfinal_demo.xml文件，文件内容配置如下：<br><context path="/jfinal_demo" docbase="F:\work\jfinal_demo\WebRoot" reloadable="true" debug="0" privileged="true"></context></li>
+</ul>
+<h2 id="填空"><a href="#填空" class="headerlink" title="填空"></a>填空</h2><p>1、MVC模式中，M指的是<strong>__</strong>，V指的是<strong>__</strong>，C指的是<strong>____</strong></p>
+<p>答案：Model,View,Controller（模型，视图，控制器）</p>
+<p>2、JDBC连接数据库的步骤依次为<strong><strong>_____</strong></strong>、<strong><strong>____</strong></strong>、<strong><strong>___</strong></strong>、<strong><strong>____</strong></strong>、<strong><strong><strong>___</strong></strong></strong>。</p>
+<p>答案：加载JDBC驱动、与数据库建立连接、发送 SQL 语句，并得到返回结果、处理返回结果、 数据库访问结束后，进行资源释放</p>
+<p>3、JSP文件请求需要经过<strong><strong>___</strong></strong>、<strong><strong>__</strong></strong>、<strong><strong>___</strong></strong>三个阶段</p>
+<p>答案：翻译阶段 编译阶段 执行阶段</p>
+<p>4、URL由<strong>____</strong>、<strong>____</strong>、<strong>___</strong>组成</p>
+<p>答案：协议 主机名（有时包含端口号） 路径</p>
+<p>5、转发是使用RequestDispatcher对象的<strong><strong><strong>_____</strong></strong></strong>方法</p>
+<p>答案：forward()</p>
+<p>6、客户端用<strong><strong>_____</strong></strong>对象存放数据</p>
+<p>答案：cookie</p>
+<p>7、Servlet的生命周期方法有<em>init__,<strong><em>service___</em></strong>,__destroy</em></p>
+<p>8、Servlet中重定向使用的是<strong>response_</strong>对象的_sendRedirect__方法</p>
+<p>9、编写Servlet时只需要根据应用的需要，重写<strong>doGet_或者</strong>doPost__方法即可</p>
+<p>10、在JSP中使用JavaBean的标签是_ &lt;jsp:useBean class BeanName id=Bean 实例&gt;__， 其中id的用途。</p>
+<ol start="11">
+<li>任何创建实体类？</li>
+</ol>
+<p>JavaBean中用- -组set 方法设置Bean的私有属性值，get 方法获得Bean的私有属性值。set 和get 方法。名称与属性名称之间必须对应，也就是:如果属性名称为xxx，那么set和get方法的名称必须为setXxx()_和  getXxx()_。</p>
+<ol start="12">
+<li>Servlet 中使用Session对象的步骤为:调用HttpServletRequest.getSession( 得到Session对象，查看Session对象，在会话中保存数据。</li>
+<li>jsp主要内置对象有： application      、exception        、 pageContext         、  request        、 session  、<strong><strong><em>response</em></strong></strong>out、config、page。</li>
+<li>URL意思为<strong><strong><strong>_____</strong></strong></strong></li>
+</ol>
+<p>答案：统一资源定位符</p>
+<ol start="15">
+<li><p>application对象是 代表应用程序上下文，它允许JSP页面与包括在同一应用程序中的任何Web组件共享信息  ，而session对象则是每个客户专用的。</p>
+</li>
+<li><p>如何执行一个线程安全的JSP?<br>只需增加如下指令 </p>
+<p>&lt;%@ page isThreadSafe=”false” %&gt; </p>
+</li>
+<li><p>JSP如何处理HTML FORM中的数据?<br>通过内置的request对象即可，如下： </p>
+<p>&lt;% </p>
+<p>String item = request.getParameter(“item”);<br>int howMany = new Integer(request.getParameter(“units”)).intValue(); </p>
+<p>%&gt;  </p>
+</li>
+<li><p>异常的处理，可在该方法的代码段中包含3类代码：    try      、   catch       和finally代码块。</p>
+</li>
+<li><p>一个Bean由三部分组成：   </p>
+<ol>
+<li>实现java.io.serializable接口、 </li>
+<li>提供无参数的构造方法  、  </li>
+<li>提供getter（）和setter（）方法访问它的属性 。</li>
+</ol>
+</li>
+<li><p>Tomcat服务器的默认端口是   8080   。</p>
+</li>
+</ol>
+<p>怎样修改tomcat的端口__在Tomcat下打开conf文件夹找到server.xml文件用记事本打开在<connector port="”8080”">中把8080更改即可。</connector></p>
+<p>el语句<br>&lt;c:if test=”条件”&gt;执行语句&lt;c:if&gt;<br> &lt;c:forEach items=”${集合对象}” var=”集合元素”&gt;&lt;c:forEach&gt;</p>
 
-//连接数据库的代码省略
-$sql=&quot;select id from users where username=&apos;$username&apos;&quot;;
-$rs=mysqli_query($link,$sql); //将构造好的SQL语句发到服务器上执行
-
-if( mysqli_num_rows($rs) ){
-echo &apos;1&apos;; //如果用户名找到有结果，证明该用户名已存在，返回1
-}else{
-echo &apos;0&apos;; //如果用户名未找到结果，证明该用户名不存在，返回0
-}
-//关闭数据库连接，释放结果集</code></pre>
       
 
       
@@ -333,7 +589,7 @@ echo &apos;0&apos;; //如果用户名未找到结果，证明该用户名不存�
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/12/AJAX介绍和详细代码/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/12/jsp_EL_对象的介绍_tomcat_servlet汇总/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -347,18 +603,9 @@ echo &apos;0&apos;; //如果用户名未找到结果，证明该用户名不存�
   
 <nav id="article-nav">
   
-    <a href="/2019/12/12/JSP_EL_JSTL技术知识点整理/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          JSP知识点整理
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/12/02/JSP中的EL语言和java脚本/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JSP中的EL语言和java脚本</div>
+    <a href="/2019/12/12/过滤器代码/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">过滤器代码</div>
       <i class="icon-circle-right"></i>
     </a>
   

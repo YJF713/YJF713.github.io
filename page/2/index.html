@@ -152,6 +152,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-request" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/21/request/">request</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/21/request/" class="archive-article-date">
+  	<time datetime="2019-11-21T08:02:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="request的getParameter-和getAttribute-方法的区别："><a href="#request的getParameter-和getAttribute-方法的区别：" class="headerlink" title="request的getParameter()和getAttribute()方法的区别："></a>request的getParameter()和getAttribute()方法的区别：</h1><h3 id="1、-request的getParameter-用来获得通过post、get等方式传入的数据，会从web客户端传到web服务器端，代表HTTP请求数据。并且返回的是String类型的数据。"><a href="#1、-request的getParameter-用来获得通过post、get等方式传入的数据，会从web客户端传到web服务器端，代表HTTP请求数据。并且返回的是String类型的数据。" class="headerlink" title="1、 request的getParameter()用来获得通过post、get等方式传入的数据，会从web客户端传到web服务器端，代表HTTP请求数据。并且返回的是String类型的数据。"></a>1、 request的getParameter()用来获得通过post、get等方式传入的数据，会从web客户端传到web服务器端，代表HTTP请求数据。并且返回的是String类型的数据。</h3><p> 得到用户名和密码</p>
+<pre><code>String u=request.getParameter(&quot;username&quot;);
+String p=request.getParameter(&quot;passwd&quot;);</code></pre><h3 id="2、使用request的getAttribute-方法必须先在request中通过setAttribute设置属性值，并且传递的数据只会存在于Web容器内部。它返回的值是object类型的。页面获得后，需要强制转换为相应的类型。"><a href="#2、使用request的getAttribute-方法必须先在request中通过setAttribute设置属性值，并且传递的数据只会存在于Web容器内部。它返回的值是object类型的。页面获得后，需要强制转换为相应的类型。" class="headerlink" title="2、使用request的getAttribute()方法必须先在request中通过setAttribute设置属性值，并且传递的数据只会存在于Web容器内部。它返回的值是object类型的。页面获得后，需要强制转换为相应的类型。"></a>2、使用request的getAttribute()方法必须先在request中通过setAttribute设置属性值，并且传递的数据只会存在于Web容器内部。它返回的值是object类型的。页面获得后，需要强制转换为相应的类型。</h3><blockquote>
+<p>有1.jsp和2.jsp</p>
+</blockquote>
+<ol>
+<li>jsp希望向2.jsp传递当前的用户名字，如何传递这一数据呢？先在1.jsp中调用如下setAttribute()方法：</li>
+</ol>
+<blockquote>
+<p>1.jsp代码：</p>
+</blockquote>
+<pre><code>&lt;%  
+String username=request.getParameter(&quot;username&quot;);  
+request.setAttribute(&quot;username&quot;，username);  
+%&gt;  
+&lt;jsp:forward page=&quot;2.jsp&quot; /&gt;  </code></pre><blockquote>
+<p>2.jsp代码：</p>
+</blockquote>
+<p>&lt;% String username=(String)request.getAttribute(“username”); %&gt; </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/21/request/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-sql语句" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

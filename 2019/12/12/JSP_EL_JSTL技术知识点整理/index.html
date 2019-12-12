@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>AJAX介绍和详细代码 | Hexo</title>
+  <title>JSP知识点整理 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Ajax一、 Ajax名称：Asynchronous JavaScript And XML 二、什么是Ajax  AJAX引擎其实是一个JavaScript对象，全写是 window.XMLHttpRequest对象，由于浏览器的版本不同，特别是老版本的IE浏览器，虽然也支持AJAX引擎，但是写法上有区别，在IE低版本中通常用 ActiveXObject对象来创建AJAX引擎。 AJAX 来自英文">
+  <meta name="description" content="JSP知识点整理一、JSP技术  jsp脚本和注释jsp脚本： 1）&amp;lt;%java代码%&amp;gt; —– 内部的java代码翻译到service方法的内部2）&amp;lt;%=java变量或表达式&amp;gt; —– 会被翻译成service方法内部out.print()3）&amp;lt;%!java代码%&amp;gt; —- 会被翻译成servlet的成员的内容   jsp注释：  不同的注释可见范围是不同 1）Ht">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AJAX介绍和详细代码">
-<meta property="og:url" content="http://yoursite.com/2019/12/12/AJAX介绍和详细代码/index.html">
+<meta property="og:title" content="JSP知识点整理">
+<meta property="og:url" content="http://yoursite.com/2019/12/12/JSP_EL_JSTL技术知识点整理/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Ajax一、 Ajax名称：Asynchronous JavaScript And XML 二、什么是Ajax  AJAX引擎其实是一个JavaScript对象，全写是 window.XMLHttpRequest对象，由于浏览器的版本不同，特别是老版本的IE浏览器，虽然也支持AJAX引擎，但是写法上有区别，在IE低版本中通常用 ActiveXObject对象来创建AJAX引擎。 AJAX 来自英文">
+<meta property="og:description" content="JSP知识点整理一、JSP技术  jsp脚本和注释jsp脚本： 1）&amp;lt;%java代码%&amp;gt; —– 内部的java代码翻译到service方法的内部2）&amp;lt;%=java变量或表达式&amp;gt; —– 会被翻译成service方法内部out.print()3）&amp;lt;%!java代码%&amp;gt; —- 会被翻译成servlet的成员的内容   jsp注释：  不同的注释可见范围是不同 1）Ht">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-12T07:05:50.549Z">
+<meta property="og:updated_time" content="2019-12-12T08:00:19.037Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AJAX介绍和详细代码">
-<meta name="twitter:description" content="Ajax一、 Ajax名称：Asynchronous JavaScript And XML 二、什么是Ajax  AJAX引擎其实是一个JavaScript对象，全写是 window.XMLHttpRequest对象，由于浏览器的版本不同，特别是老版本的IE浏览器，虽然也支持AJAX引擎，但是写法上有区别，在IE低版本中通常用 ActiveXObject对象来创建AJAX引擎。 AJAX 来自英文">
+<meta name="twitter:title" content="JSP知识点整理">
+<meta name="twitter:description" content="JSP知识点整理一、JSP技术  jsp脚本和注释jsp脚本： 1）&amp;lt;%java代码%&amp;gt; —– 内部的java代码翻译到service方法的内部2）&amp;lt;%=java变量或表达式&amp;gt; —– 会被翻译成service方法内部out.print()3）&amp;lt;%!java代码%&amp;gt; —- 会被翻译成servlet的成员的内容   jsp注释：  不同的注释可见范围是不同 1）Ht">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,107 +154,165 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-AJAX介绍和详细代码" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JSP_EL_JSTL技术知识点整理" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      AJAX介绍和详细代码
+      JSP知识点整理
     </h1>
   
 
         
-        <a href="/2019/12/12/AJAX介绍和详细代码/" class="archive-article-date">
-  	<time datetime="2019-12-12T06:54:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-12</time>
+        <a href="/2019/12/12/JSP_EL_JSTL技术知识点整理/" class="archive-article-date">
+  	<time datetime="2019-12-12T07:20:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h1><p>一、 Ajax名称：Asynchronous JavaScript And XML</p>
-<p>二、什么是Ajax</p>
-<ul>
-<li>AJAX引擎其实是一个JavaScript对象，全写是 window.XMLHttpRequest对象，由于浏览器的版本不同，特别是老版本的IE浏览器，虽然也支持AJAX引擎，但是写法上有区别，在IE低版本中通常用 ActiveXObject对象来创建AJAX引擎。 AJAX 来自英文“Asynchronous Javascript And XML” 的缩写，也称为异步JavaScript和XML。 简言之，就是一个JS对象，可以实现在网页加载完成以后，不用刷新的情况下与服务器交互。产生极好的用户体验效果。</li>
-</ul>
-<p>三、技术范围： Ajax是几种技术的整合： JavaScript 、XML和CSS ，其中最主要的是JavaScript。</p>
-<p>四、特点：Ajax不采用请求/响应的方式，不需要重新加载页面。用户发送请求得到响应这个过程，用户体验的连续的。</p>
-<p>五、分类：</p>
+        <h2 id="JSP知识点整理"><a href="#JSP知识点整理" class="headerlink" title="JSP知识点整理"></a>JSP知识点整理</h2><p>一、JSP技术</p>
 <ol>
-<li>JS方式:Ajax通过JavaScript的XMLHttpRequest对象完成一步发送请求到服务器并获取返回结果（可以是XML、文本、JSON）的任务，然后使用JavaScript更新局部页面。</li>
-<li>JQuery方式;主要有以下三个方法：<br>$ajax()           $get()            $post()</li>
+<li><p>jsp脚本和注释<br>jsp脚本：</p>
+<p>1）&lt;%java代码%&gt; —– 内部的java代码翻译到service方法的内部<br>2）&lt;%=java变量或表达式&gt; —– 会被翻译成service方法内部out.print()<br>3）&lt;%!java代码%&gt; —- 会被翻译成servlet的成员的内容</p>
+</li>
 </ol>
-<h2 id="jQuery-代码："><a href="#jQuery-代码：" class="headerlink" title="jQuery 代码："></a>jQuery 代码：</h2><pre><code>$(document).ready(function(){
-$(&quot;#b01&quot;).click(function(){
-htmlobj=$.ajax({url:&quot;/jquery/test1.txt&quot;,async:false});
-$(&quot;#myDiv&quot;).html(htmlobj.responseText);
-});
-});</code></pre><hr>
-<h1 id="AJAX请求步骤详细代码"><a href="#AJAX请求步骤详细代码" class="headerlink" title="AJAX请求步骤详细代码"></a>AJAX请求步骤详细代码</h1><h2 id="客户端代码-reg-html"><a href="#客户端代码-reg-html" class="headerlink" title="客户端代码 reg.html"></a>客户端代码 reg.html</h2><pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;meta charset=&quot;utf-8&quot;/&gt;
-&lt;title&gt;AJAX引擎实现用户名重名检测&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
+<p>jsp注释：  不同的注释可见范围是不同</p>
+<pre><code>1）Html注释：&lt;!--注释内容--&gt; ---可见范围 jsp源码、翻译后的servlet、页面 显示html源码
+2）java注释：//单行注释  /*多行注释*/ --可见范围 jsp源码 翻译后的servlet
+3）jsp注释：&lt;%--注释内容--%&gt; ----- 可见范围 jsp源码可见</code></pre><ol start="2">
+<li>jsp运行原理—–jsp本质就是servlet（面试）</li>
+</ol>
+<p>jsp在第一次被访问时会被Web容器翻译成servlet，在执行过程：第一次访问—-&gt;helloServlet.jsp—-&gt;helloServlet_jsp.java—-&gt;编译运行</p>
+<p> PS：被翻译后的servlet在Tomcat的work目录中可以找到</p>
+<ol start="3">
+<li>jsp指令（3个）</li>
+</ol>
+<p>jsp的指令是指导jsp翻译和运行的命令，jsp包括三大指令：</p>
+<p>1）page指令—-属性最多的指令（实际开发中page指令默认）属性最多的一个指令，根据不同的属性，指导整个页面特性 。</p>
+<p>格式：&lt;%@ page 属性名1= “属性值1” 属性名2= “属性值2” …%&gt;</p>
+<p>常用属性如下：</p>
+<p>language：jsp脚本中可以嵌入的语言种类，这个没用，写与不写一样的；由于jsp只能嵌入Java代码。</p>
+<p> pageEncoding：当前jsp文件的本身编码—内部可以包含contentType</p>
+<p>contentType：response.setContentType(text/html;charset=UTF-8)</p>
+<p>session：是否jsp在翻译时自动创建session</p>
+<p> import：导入java的包</p>
+<p>errorPage：当当前页面出错后跳转到哪个页面</p>
+<p>isErrorPage：当前页面是一个处理错误的页面 </p>
+<p>2）include指令—–页面包含（静态包含）指令，可以将一个jsp页面包含到另一个jsp页面中</p>
+<p>格式：&lt;%@ include file=”被包含的文件地址”%&gt; </p>
+<p>3）taglib指令—–在jsp页面中引入标签库（jstl标签库、struts2标签库）</p>
+<p>格式：&lt;%@ taglib uri=”标签库地址” prefix=”前缀”%&gt;</p>
+<ol start="4">
+<li><p>jsp内置/隐式对象（9个）</p>
+<p> jsp被翻译成servlet之后，service方法中有9个对象定义并初始化完毕，我们在jsp 脚本中可以直接使用这9个对象</p>
+<p>  (1) session   (2)request     (3)response       (4)config<br>  (5) out        (6)page      (7)application      (8)pageContext<br>  (9) exception<br>(1)out对象</p>
+<p> out的类型：JspWriter</p>
+<p> out作用：向客户端输出内容—-out.write()</p>
+<p> out缓冲区默认8kb 可以设置成0 代表关闭out缓冲区 内容直接写到respons缓冲 器；buffer=0kb，代表关闭out缓冲区;</p>
+</li>
+</ol>
+<p>(2)pageContext对象</p>
+<pre><code>jsp页面的上下文对象，作用如下：
 
-&lt;form&gt;
-&lt;p&gt;用户名：&lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot;/&gt; &lt;span  id=&quot;result&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;密码：&lt;input type=&quot;password&quot; name=&quot;pwd1&quot;/&gt;&lt;/p&gt;
-&lt;p&gt;确认密码：&lt;input type=&quot;password&quot; name=&quot;pwd2&quot;/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;立即注册&quot;/&gt;&lt;/p&gt;
-&lt;/form&gt;
+page对象与pageContext对象不是一回事,没有任何关系；
 
-&lt;script type=&quot;text/javascript&quot;&gt;
-var username=document.getElementById(&apos;username&apos;);
+    1）pageContext是一个域对象
 
-//用户名输入框失去焦点时触发
-username.onblur=function(){
+    setAttribute(String name,Object obj)
 
-//主角登场——AJAX引擎的创建及使用详细代码来了
-var ajax=new XMLHttpRequest(); //创建AJAX引擎实例
+    getAttribute(String name)
 
-//创建GET请求，发送请求时传username值
-ajax.open(&apos;GET&apos;,&apos;check.php?username=&apos;+this.value); 
-//当AJAX引擎的状态产生改变时触发onreadystatechange属性指向的函数（多次执行）
-//状态值有5个：0 1 2 3 4 ，其中4表示服务器端响应就绪
-ajax.onreadystatechange=function(){
-//必须在服务器响应就绪，并且HTTP的状态码是200时才接收数据
-//ajax.readyState 获取到服务器响应状态码，必须是4才表示就绪
-//ajax.status 获取到HTTP的状态码，必须是200才表示成功
-if(ajax.readyState==4 &amp;&amp; ajax.status==200){
-//ajax.responseText 接收服务器响应回来的内容
-//console.log(ajax.responseText);
-//接收到服务器响应数据后，AJAX工作已完成，可根据结果显示提示信息
+    removeAttrbute(String name)
 
-If(ajax.responseText==&apos;1&apos;){
-result.innerHTML=&apos;该用户名太受欢迎，请重新选择&apos;;
-result.style.color=&apos;#f00&apos;; //将字体设置为红色
-}else{
-result.innerHTML=&apos;恭喜你，可以注册&apos;;
-result.style.color=&apos;#0a0&apos;; //将字体设置为绿色
-}
-}
-}
-ajax.send(); //发送请求
-}
-&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre><h2 id="服务器端代码-check-php"><a href="#服务器端代码-check-php" class="headerlink" title="服务器端代码 check.php"></a>服务器端代码 check.php</h2><pre><code>//服务器端的代码可以使用PHP编写，根据逻辑反馈数据给客户端实现验证功能
-$username=$_GET[&apos;username&apos;];
+pageContext可以向指定的其他域中存取数据
 
-//连接数据库的代码省略
-$sql=&quot;select id from users where username=&apos;$username&apos;&quot;;
-$rs=mysqli_query($link,$sql); //将构造好的SQL语句发到服务器上执行
+    setAttribute(String name,Object obj,int scope)
 
-if( mysqli_num_rows($rs) ){
-echo &apos;1&apos;; //如果用户名找到有结果，证明该用户名已存在，返回1
-}else{
-echo &apos;0&apos;; //如果用户名未找到结果，证明该用户名不存在，返回0
-}
-//关闭数据库连接，释放结果集</code></pre>
+    getAttribute(String name,int scope)
+
+    removeAttrbute(String name,int scope)
+
+findAttribute(String name)
+
+    ---依次从pageContext域，request域，session域，application域中获取属性，在某个域中获取后将不在向后寻找
+
+四大作用域的总结：
+
+    page域：当前jsp页面范围
+
+    request域：一次请求
+
+    session域：一次会话
+
+    application域：整个web应用
+
+2）可以获得其他8大隐式对象
+
+    例如： pageContext.getRequest()
+
+    pageContext.getSession()</code></pre><ol start="5">
+<li><p>jsp标签（动作）</p>
+<p> 1）页面包含（动态包含）：&lt;jsp:include page=”被包含的页面”/&gt;</p>
+<p> 2）请求转发：&lt;jsp:forward page=”要转发的资源” /&gt;</p>
+</li>
+</ol>
+<p>二、EL技术</p>
+<ol>
+<li><p>EL 表达式概述</p>
+<p>EL（Express Lanuage）表达式可以嵌入在jsp页面内部，减少jsp脚本的编写，EL 出现的目的是要替代jsp页面中</p>
+</li>
+</ol>
+<p>脚本的编写。<br>2. EL从域中取出数据</p>
+<pre><code>EL最主要的作用是获得四大域中的数据，格式${EL表达式}
+
+EL获得pageContext域中的值：$(pageContextScope.key);
+
+EL获得request域中的值：$(request.key);
+
+EL获得session域中的值：$(session.key);
+
+EL获得application域中的值：$(application.key);
+
+EL从四个域中获得某个值$(key);
+
+---同样是依次从pageContext域，request域，session域，application域中获取属性，</code></pre><p>在某个域中获取后将不在向后寻找<br>3. EL的内置对象</p>
+<pre><code>pageScope,requestScope,sessionScope,applicationScope
+
+     ---- 获取JSP中域中的数据
+
+param,paramValues - 接收参数.
+
+header,headerValues  - 获取请求头信息
+
+initParam - 获取全局初始化参数
+
+cookie - WEB开发中cookie
+
+pageContext - WEB开发中的pageContext.</code></pre><p>$(pageContext.request.contextPath)</p>
+<p>相当于</p>
+<p>&lt;%=pageContext.getRequest().getContextPath%&gt;</p>
+<p>获得WEB应用的名称<br>三、JSTL技术</p>
+<ol>
+<li><p>JSTL概述</p>
+<p> JSTL（JSP Standard Tag Library)，JSP标准标签库，可以嵌入在jsp页面中使用标签的形式完成业务逻辑等功能。</p>
+</li>
+</ol>
+<p>jstl出现的目的同el一样也是要提到jsp页面中的脚本代码。JSTL标准标准标签库有5个子库，但随着发展，</p>
+<p>目前常使用的是他的核心库</p>
+<ol start="2">
+<li><p>JSTL下载与导入</p>
+<p> JSTL下载：</p>
+<p> 从Apache的网站下载JSTL的JAR包。进入 “<a href="http://archive.apache.org/dist/jakarta/taglibs/standard/binaries/”网址下载" target="_blank" rel="noopener">http://archive.apache.org/dist/jakarta/taglibs/standard/binaries/”网址下载</a> JSTL的安装包。jakarta-taglibs-standard-1.1.2.zip，然后将下载好的JSTL安装包 进行解压，此时，在lib目录下可以看到两个JAR文件，分别为jstl.jar和standard.jar。 其中，jstl.jar文件包含JSTL规范中定义的接口和相关类，standard.jar文件包含用于实现JSTL的.class文件以及JSTL中5个标签库描述符文件（TLD）</p>
+</li>
+</ol>
+<p>将两个jar包导入我们工程的lib中<br>3. JSTL核心库的常用标签</p>
+<pre><code>1）&lt;c:if&gt;标签
+
+2）&lt;c:for&gt;标签</code></pre>
       
 
       
@@ -333,7 +391,7 @@ echo &apos;0&apos;; //如果用户名未找到结果，证明该用户名不存�
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/12/AJAX介绍和详细代码/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/12/JSP_EL_JSTL技术知识点整理/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -347,18 +405,18 @@ echo &apos;0&apos;; //如果用户名未找到结果，证明该用户名不存�
   
 <nav id="article-nav">
   
-    <a href="/2019/12/12/JSP_EL_JSTL技术知识点整理/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/12/12/过滤器代码/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          JSP知识点整理
+          过滤器代码
         
       </div>
     </a>
   
   
-    <a href="/2019/12/02/JSP中的EL语言和java脚本/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JSP中的EL语言和java脚本</div>
+    <a href="/2019/12/12/AJAX介绍和详细代码/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">AJAX介绍和详细代码</div>
       <i class="icon-circle-right"></i>
     </a>
   
