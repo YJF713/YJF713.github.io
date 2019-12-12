@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="JSP中的EL语言和java脚本：demo1127项目，登录后Session对象是有username login.jsp-&amp;gt;servlet(LoginAction.java)-&amp;gt;welcome.jsp &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;欢迎页面&amp;lt;/title&amp;gt;&amp;lt;/head&amp;gt; &amp;lt;p&amp;gt;欢迎${username}">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-02T10:23:13.391Z">
+<meta property="og:updated_time" content="2019-12-11T01:20:13.365Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSP中的EL语言和java脚本">
 <meta name="twitter:description" content="JSP中的EL语言和java脚本：demo1127项目，登录后Session对象是有username login.jsp-&amp;gt;servlet(LoginAction.java)-&amp;gt;welcome.jsp &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;欢迎页面&amp;lt;/title&amp;gt;&amp;lt;/head&amp;gt; &amp;lt;p&amp;gt;欢迎${username}">
@@ -185,22 +185,21 @@
 </li>
 <li><p>login.jsp-&gt;servlet(LoginAction.java)-&gt;welcome.jsp</p>
 <pre><code>&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;欢迎页面&lt;/title&gt;&lt;/head&gt;
-&lt;p&gt;欢迎&lt;%=Session.getAttribute(&quot;username&quot;)%&gt;登录&lt;/p&gt;
-&lt;/body&gt;
+        &lt;head&gt;
+        &lt;title&gt;欢迎页面&lt;/title&gt;&lt;/head&gt;
+        &lt;p&gt;欢迎&lt;%=Session.getAttribute(&quot;username&quot;)%&gt;登录&lt;/p&gt;
+        &lt;/body&gt;
 &lt;/html&gt;</code></pre><ol start="3">
-<li><p>login.jsp-&gt;servlet(LoginAction.java)-&gt;welcome.jsp</p>
-  <html>
-  <head><meta name="generator" content="Hexo 3.9.0">
-  <title>欢迎页面</title></head>
-  <body><% out.print("<p>欢迎+"Session.getAttribute("username")"+登录<p></p>");%>
-  </%></body>
-  </html>
-
-
-</li>
+<li>login.jsp-&gt;servlet(LoginAction.java)-&gt;welcome.jsp</li>
 </ol>
+<html>
+     <head><meta name="generator" content="Hexo 3.9.0">
+     <title>欢迎页面</title></head>
+     <body><% out.print("<p>欢迎+"Session.getAttribute("username")"+登录<p></p>");%>
+     </%></body>
+     </html>
+
+
 </li>
 </ol>
 <p>${}方式：“自动从内置对象中查找值”</p>
@@ -306,6 +305,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/12/05/JSP知识点整理理——-EL——-EL-JSP-JSTL技术/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          JSP知识点整理理——_EL——_EL-JSP-JSTL技术
+        
+      </div>
+    </a>
   
   
     <a href="/2019/11/30/EL表达式/" id="article-nav-older" class="article-nav-link-wrap">
