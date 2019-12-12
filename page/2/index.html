@@ -152,6 +152,117 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-sql语句" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/21/sql语句/">sql语句</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/21/sql语句/" class="archive-article-date">
+  	<time datetime="2019-11-21T07:20:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="对应数据库sql1111的语句"><a href="#对应数据库sql1111的语句" class="headerlink" title="对应数据库sql1111的语句"></a>对应数据库sql1111的语句</h1><h2 id="单表查询样例"><a href="#单表查询样例" class="headerlink" title="单表查询样例"></a>单表查询样例</h2><pre><code>#select 字段(或者聚合函数) 
+from 表 
+where 条件A and 条件B 
+group by 条件C 
+order by 字段 desc;</code></pre><h2 id="两表联查语句样例"><a href="#两表联查语句样例" class="headerlink" title="两表联查语句样例"></a>两表联查语句样例</h2><pre><code>#select 字段 
+from 表A as 别名01 inner join 表B as 别名02 
+where 别名01.字段 = 别名02.字段;</code></pre><h2 id="查询字段vend-id不重复，且同时字段prod-name不重复的行。"><a href="#查询字段vend-id不重复，且同时字段prod-name不重复的行。" class="headerlink" title="查询字段vend_id不重复，且同时字段prod_name不重复的行。"></a>查询字段vend_id不重复，且同时字段prod_name不重复的行。</h2><pre><code>SELECT distinct vend_id, prod_name 
+from products; </code></pre><h2 id="查询products表第2-4行。offset偏移量，偏移单位是行。"><a href="#查询products表第2-4行。offset偏移量，偏移单位是行。" class="headerlink" title="查询products表第2-4行。offset偏移量，偏移单位是行。"></a>查询products表第2-4行。offset偏移量，偏移单位是行。</h2><pre><code>select * 
+from products 
+limit 3 offset 1;</code></pre><h2 id="创建表customers"><a href="#创建表customers" class="headerlink" title="创建表customers"></a>创建表customers</h2><pre><code>CREATE TABLE customers(
+        cust_id INT AUTO_INCREMENT PRIMARY  KEY,
+        cust_name VARCHAR(255) NOT NULL,
+        cust_address VARCHAR(255), 
+        cust_city VARCHAR(255),
+        cust_state VARCHAR(255),
+        cust_country VARCHAR(255),
+        cust_contact VARCHAR(255),
+        cust_email VARCHAR(255)
+);</code></pre><h2 id="插入数据至表customers"><a href="#插入数据至表customers" class="headerlink" title="插入数据至表customers"></a>插入数据至表customers</h2><pre><code>INSERT INTO customers VALUES(
+    1000000001 , &apos;Samuel&apos; , &apos;郑上路81号&apos; , &apos;郑州&apos;,&apos;河南&apos;, &apos;中国&apos;,&apos;13512345678&apos;,&apos;sam@abc.com&apos;);</code></pre><h2 id="创建表orders"><a href="#创建表orders" class="headerlink" title="创建表orders"></a>创建表orders</h2><pre><code>CREATE TABLE orders(order_num INT AUTO_INCREMENT PRIMARY,order_date TIMESTAMP,cust_id INT);</code></pre><h2 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h2><pre><code>INSERT INTO orders(order_num, cust_id) VALUES(&apos;20005&apos;,1000000001);</code></pre><h2 id="创建表orderitems"><a href="#创建表orderitems" class="headerlink" title="创建表orderitems"></a>创建表orderitems</h2><pre><code>CREATE TABLE orderitems(order_num INT AUTO_INCREMENT PRIMARY 
+KEY,order_item VARCHAR(255), prod_id VARCHAR(255), quantity int,item_price double);</code></pre><h2 id="插入数据-1"><a href="#插入数据-1" class="headerlink" title="插入数据"></a>插入数据</h2><pre><code>INSERT INTO orderitems VALUES(&apos;20005&apos;,1, &quot;BRO1&quot;, 100, 5.49);
+
+INSERT INTO orderitems VALUES(&apos;20009&apos;,3, &quot;BRO1&quot;, 100, 3.99);
+
+INSERT INTO orderitems VALUES(&apos;20006&apos;,1, &quot;BRO2&quot;, 200, 5.49);
+
+INSERT INTO orderitems(order_item,prod_id) VALUES(1, &quot;BRO3&quot;);</code></pre><p>###查询orderitems中的语句   </p>
+<pre><code>select * from orderitems;</code></pre><h3 id="插入语句中id-”BR01”的order-num"><a href="#插入语句中id-”BR01”的order-num" class="headerlink" title="插入语句中id=”BR01”的order_num"></a>插入语句中id=”BR01”的order_num</h3><pre><code>select order_num from orderitems where prod_id=&apos;BRO1&apos;</code></pre><h2 id="求quantity列的平均值-quantity值为null的行，不参与计算"><a href="#求quantity列的平均值-quantity值为null的行，不参与计算" class="headerlink" title="求quantity列的平均值(quantity值为null的行，不参与计算)"></a>求quantity列的平均值(quantity值为null的行，不参与计算)</h2><pre><code>select     avg(quantity) from orderitems;</code></pre><h2 id="创建表products"><a href="#创建表products" class="headerlink" title="创建表products"></a>创建表products</h2><pre><code>CREATE TABLE products(
+        prod_id VARCHAR(255), 
+        vend_id VARCHAR(255),
+        prod_name VARCHAR(255), 
+        prod_price double, 
+        prod_desc VARCHAR(255)
+    ); </code></pre><h2 id="插入数据-2"><a href="#插入数据-2" class="headerlink" title="插入数据"></a>插入数据</h2><pre><code>INSERT INTO products VALUES(&apos;BRO01&apos;, &apos;BRS01&apos;, &apos;8 inch teddy bear&apos;, 5.99, &apos;inch teddy bear, comes with cap and jacket&apos;);</code></pre><h3 id="插入指点的数据"><a href="#插入指点的数据" class="headerlink" title="插入指点的数据"></a>插入指点的数据</h3><pre><code>insert into products(prod_id, vend_id) values(&apos;BR005&apos;,&apos;DDL01&apos;);</code></pre><h3 id="对指定的数据进行分组计数"><a href="#对指定的数据进行分组计数" class="headerlink" title="对指定的数据进行分组计数"></a>对指定的数据进行分组计数</h3><pre><code>select prod_name,count(*) 
+from products
+group by prod_name;</code></pre><h2 id="查询表products"><a href="#查询表products" class="headerlink" title="查询表products"></a>查询表products</h2><h3 id="俩次排序（默认是Asc升序）"><a href="#俩次排序（默认是Asc升序）" class="headerlink" title="俩次排序（默认是Asc升序）"></a>俩次排序（默认是Asc升序）</h3><pre><code>SELECT prod_price, prod_id, prod_name FROM  products 
+ORDER BY prod_price desc,prod_name;</code></pre><h3 id="并列条件查询用and"><a href="#并列条件查询用and" class="headerlink" title="并列条件查询用and"></a>并列条件查询用and</h3><pre><code>select * 
+from products 
+where prod_price &lt;5 and vend_id &lt;&gt; &apos;DLL01&apos; 
+order by prod_price desc;</code></pre><h2 id="查询平均成绩-忽略为null的行"><a href="#查询平均成绩-忽略为null的行" class="headerlink" title="查询平均成绩(忽略为null的行)"></a>查询平均成绩(忽略为null的行)</h2><pre><code>select avg(prod_price) from products;</code></pre><h2 id="查询平均成绩，列名为均价"><a href="#查询平均成绩，列名为均价" class="headerlink" title="查询平均成绩，列名为均价"></a>查询平均成绩，列名为均价</h2><pre><code>select avg(prod_price) as 均价 from products;</code></pre><h2 id="查询产品名非空的行数"><a href="#查询产品名非空的行数" class="headerlink" title="查询产品名非空的行数"></a>查询产品名非空的行数</h2><pre><code>select prod_name, count(*) 
+from products
+group by prod_name 
+having count(*)&gt;=2;</code></pre><h2 id="创建表vendors"><a href="#创建表vendors" class="headerlink" title="创建表vendors"></a>创建表vendors</h2><pre><code>CREATE TABLE vendors
+(vendor_id VARCHAR(255), vend_name VARCHAR(255), 
+vend_address VARCHAR(255), vend_city VARCHAR(255), 
+vend_state VARCHAR(255), vend_zip VARCHAR(255), 
+vend_country VARCHAR(255)
+); </code></pre><h2 id="插入数据-3"><a href="#插入数据-3" class="headerlink" title="插入数据"></a>插入数据</h2><pre><code>INSERT INTO vendors VALUES(&apos;BRS01&apos;,&apos;Bear R US&apos;,&apos;123 main street&apos;,&apos;bear town&apos;,&apos;MI&apos;,&apos;471023&apos;, &apos;USA&apos;);</code></pre><h2 id="两表-oderitems和orders-联查"><a href="#两表-oderitems和orders-联查" class="headerlink" title="两表(oderitems和orders)联查"></a>两表(oderitems和orders)联查</h2><pre><code>select a.order_num,prod_id,quantity,item_price, order_date,cust_id
+from orderitems as a INNER JOIN orders as b
+where a.order_num = b.order_num;</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/21/sql语句/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Tips-JSP-连接Mysql时ClassNotFound异常" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

@@ -152,6 +152,167 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-过滤器代码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/12/过滤器代码/">过滤器代码</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/12/过滤器代码/" class="archive-article-date">
+  	<time datetime="2019-12-12T07:54:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="EncodingFilter页面"><a href="#EncodingFilter页面" class="headerlink" title="EncodingFilter页面"></a>EncodingFilter页面</h2><pre><code>package sam.his.filter;
+
+import java.io.IOException;
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
+
+/**
+* Servlet Filter implementation class EncodingFilter
+*/
+@WebFilter(&quot;/EncodingFilter&quot;)
+public class EncodingFilter implements Filter {
+
+    /**
+    * Default constructor. 
+    */
+    public EncodingFilter() {
+        // TODO Auto-generated constructor stub
+    }
+
+    /**
+    * @see Filter#destroy()
+    */
+    public void destroy() {
+        // TODO Auto-generated method stub
+    }
+
+    /**
+    * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
+    */
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        // TODO Auto-generated method stub
+        // place your code here
+        System.out.println(&quot;EncodingtFilter****请求处理之前****&quot;);
+        //设置请求字符集
+        request.setCharacterEncoding(&quot;UTF-8&quot;);
+        //请求向下传递
+        chain.doFilter(request, response);
+        System.out.println(&quot;EncodingFilter****请求处理之后****&quot;);
+        // pass the request along the filter chain
+    }
+
+    /**
+    * @see Filter#init(FilterConfig)
+    */
+    public void init(FilterConfig fConfig) throws ServletException {
+        // TODO Auto-generated method stub
+    }
+
+}</code></pre><h2 id="LoginFilter页面"><a href="#LoginFilter页面" class="headerlink" title="LoginFilter页面"></a>LoginFilter页面</h2><pre><code>package sam.his.filter;
+
+import java.io.IOException;
+
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import sam.his.vo.User;
+
+public class LoginFilter implements Filter{
+
+    public void destroy() {
+
+    }
+
+    public void doFilter(ServletRequest request, ServletResponse response,
+            FilterChain chain) throws IOException, ServletException {
+        /**
+        * 把ServletRequest对象向下转型成HttpServletRequest对象
+        * 才能获取HttpSession
+        */
+        HttpServletRequest req = (HttpServletRequest)request;
+        HttpSession session = req.getSession();
+        //从session中获取用户信息
+        User user = (User)session.getAttribute(&quot;user&quot;);
+        //能够从session获取到用户信息，代表用户已经成功登录过
+        if(user!=null){
+            //请求向下传递
+            chain.doFilter(request, response);
+        }else{
+            //如果获取不到用户信息，代表用户没有登录，则转向到登录页面
+            req.getRequestDispatcher(&quot;/login.jsp&quot;).forward(request, response);
+        }
+
+    }
+
+    public void init(FilterConfig arg0) throws ServletException {
+
+    }
+
+}</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/12/过滤器代码/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JSP知识点整理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -175,9 +336,8 @@
         <h2 id="JSP知识点整理"><a href="#JSP知识点整理" class="headerlink" title="JSP知识点整理"></a>JSP知识点整理</h2><p>一、JSP技术</p>
 <ol>
 <li><p>jsp脚本和注释<br>jsp脚本：</p>
-<pre><code>1）&lt;%java代码%&gt; ----- 内部的java代码翻译到service方法的内部
-2）&lt;%=java变量或表达式&gt; ----- 会被翻译成service方法内部out.print()
-3）&lt;%!java代码%&gt; ---- 会被翻译成servlet的成员的内容</code></pre></li>
+<p>1）&lt;%java代码%&gt; —– 内部的java代码翻译到service方法的内部<br>2）&lt;%=java变量或表达式&gt; —– 会被翻译成service方法内部out.print()<br>3）&lt;%!java代码%&gt; —- 会被翻译成servlet的成员的内容</p>
+</li>
 </ol>
 <p>jsp注释：  不同的注释可见范围是不同</p>
 <pre><code>1）Html注释：&lt;!--注释内容--&gt; ---可见范围 jsp源码、翻译后的servlet、页面 显示html源码
@@ -208,9 +368,7 @@
 <ol start="4">
 <li><p>jsp内置/隐式对象（9个）</p>
 <p> jsp被翻译成servlet之后，service方法中有9个对象定义并初始化完毕，我们在jsp 脚本中可以直接使用这9个对象</p>
-<pre><code>(1) session   (2)request     (3)response       (4)config
-(5) out        (6)page      (7)application      (8)pageContext
-(9) exception</code></pre><p>(1)out对象</p>
+<p>  (1) session   (2)request     (3)response       (4)config<br>  (5) out        (6)page      (7)application      (8)pageContext<br>  (9) exception<br>(1)out对象</p>
 <p> out的类型：JspWriter</p>
 <p> out作用：向客户端输出内容—-out.write()</p>
 <p> out缓冲区默认8kb 可以设置成0 代表关闭out缓冲区 内容直接写到respons缓冲 器；buffer=0kb，代表关闭out缓冲区;</p>
@@ -1137,117 +1295,6 @@ request.setAttribute(&quot;username&quot;，username);
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/11/21/request/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-sql语句" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/21/sql语句/">sql语句</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/21/sql语句/" class="archive-article-date">
-  	<time datetime="2019-11-21T07:20:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="对应数据库sql1111的语句"><a href="#对应数据库sql1111的语句" class="headerlink" title="对应数据库sql1111的语句"></a>对应数据库sql1111的语句</h1><h2 id="单表查询样例"><a href="#单表查询样例" class="headerlink" title="单表查询样例"></a>单表查询样例</h2><pre><code>#select 字段(或者聚合函数) 
-from 表 
-where 条件A and 条件B 
-group by 条件C 
-order by 字段 desc;</code></pre><h2 id="两表联查语句样例"><a href="#两表联查语句样例" class="headerlink" title="两表联查语句样例"></a>两表联查语句样例</h2><pre><code>#select 字段 
-from 表A as 别名01 inner join 表B as 别名02 
-where 别名01.字段 = 别名02.字段;</code></pre><h2 id="查询字段vend-id不重复，且同时字段prod-name不重复的行。"><a href="#查询字段vend-id不重复，且同时字段prod-name不重复的行。" class="headerlink" title="查询字段vend_id不重复，且同时字段prod_name不重复的行。"></a>查询字段vend_id不重复，且同时字段prod_name不重复的行。</h2><pre><code>SELECT distinct vend_id, prod_name 
-from products; </code></pre><h2 id="查询products表第2-4行。offset偏移量，偏移单位是行。"><a href="#查询products表第2-4行。offset偏移量，偏移单位是行。" class="headerlink" title="查询products表第2-4行。offset偏移量，偏移单位是行。"></a>查询products表第2-4行。offset偏移量，偏移单位是行。</h2><pre><code>select * 
-from products 
-limit 3 offset 1;</code></pre><h2 id="创建表customers"><a href="#创建表customers" class="headerlink" title="创建表customers"></a>创建表customers</h2><pre><code>CREATE TABLE customers(
-        cust_id INT AUTO_INCREMENT PRIMARY  KEY,
-        cust_name VARCHAR(255) NOT NULL,
-        cust_address VARCHAR(255), 
-        cust_city VARCHAR(255),
-        cust_state VARCHAR(255),
-        cust_country VARCHAR(255),
-        cust_contact VARCHAR(255),
-        cust_email VARCHAR(255)
-);</code></pre><h2 id="插入数据至表customers"><a href="#插入数据至表customers" class="headerlink" title="插入数据至表customers"></a>插入数据至表customers</h2><pre><code>INSERT INTO customers VALUES(
-    1000000001 , &apos;Samuel&apos; , &apos;郑上路81号&apos; , &apos;郑州&apos;,&apos;河南&apos;, &apos;中国&apos;,&apos;13512345678&apos;,&apos;sam@abc.com&apos;);</code></pre><h2 id="创建表orders"><a href="#创建表orders" class="headerlink" title="创建表orders"></a>创建表orders</h2><pre><code>CREATE TABLE orders(order_num INT AUTO_INCREMENT PRIMARY,order_date TIMESTAMP,cust_id INT);</code></pre><h2 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h2><pre><code>INSERT INTO orders(order_num, cust_id) VALUES(&apos;20005&apos;,1000000001);</code></pre><h2 id="创建表orderitems"><a href="#创建表orderitems" class="headerlink" title="创建表orderitems"></a>创建表orderitems</h2><pre><code>CREATE TABLE orderitems(order_num INT AUTO_INCREMENT PRIMARY 
-KEY,order_item VARCHAR(255), prod_id VARCHAR(255), quantity int,item_price double);</code></pre><h2 id="插入数据-1"><a href="#插入数据-1" class="headerlink" title="插入数据"></a>插入数据</h2><pre><code>INSERT INTO orderitems VALUES(&apos;20005&apos;,1, &quot;BRO1&quot;, 100, 5.49);
-
-INSERT INTO orderitems VALUES(&apos;20009&apos;,3, &quot;BRO1&quot;, 100, 3.99);
-
-INSERT INTO orderitems VALUES(&apos;20006&apos;,1, &quot;BRO2&quot;, 200, 5.49);
-
-INSERT INTO orderitems(order_item,prod_id) VALUES(1, &quot;BRO3&quot;);</code></pre><p>###查询orderitems中的语句   </p>
-<pre><code>select * from orderitems;</code></pre><h3 id="插入语句中id-”BR01”的order-num"><a href="#插入语句中id-”BR01”的order-num" class="headerlink" title="插入语句中id=”BR01”的order_num"></a>插入语句中id=”BR01”的order_num</h3><pre><code>select order_num from orderitems where prod_id=&apos;BRO1&apos;</code></pre><h2 id="求quantity列的平均值-quantity值为null的行，不参与计算"><a href="#求quantity列的平均值-quantity值为null的行，不参与计算" class="headerlink" title="求quantity列的平均值(quantity值为null的行，不参与计算)"></a>求quantity列的平均值(quantity值为null的行，不参与计算)</h2><pre><code>select     avg(quantity) from orderitems;</code></pre><h2 id="创建表products"><a href="#创建表products" class="headerlink" title="创建表products"></a>创建表products</h2><pre><code>CREATE TABLE products(
-        prod_id VARCHAR(255), 
-        vend_id VARCHAR(255),
-        prod_name VARCHAR(255), 
-        prod_price double, 
-        prod_desc VARCHAR(255)
-    ); </code></pre><h2 id="插入数据-2"><a href="#插入数据-2" class="headerlink" title="插入数据"></a>插入数据</h2><pre><code>INSERT INTO products VALUES(&apos;BRO01&apos;, &apos;BRS01&apos;, &apos;8 inch teddy bear&apos;, 5.99, &apos;inch teddy bear, comes with cap and jacket&apos;);</code></pre><h3 id="插入指点的数据"><a href="#插入指点的数据" class="headerlink" title="插入指点的数据"></a>插入指点的数据</h3><pre><code>insert into products(prod_id, vend_id) values(&apos;BR005&apos;,&apos;DDL01&apos;);</code></pre><h3 id="对指定的数据进行分组计数"><a href="#对指定的数据进行分组计数" class="headerlink" title="对指定的数据进行分组计数"></a>对指定的数据进行分组计数</h3><pre><code>select prod_name,count(*) 
-from products
-group by prod_name;</code></pre><h2 id="查询表products"><a href="#查询表products" class="headerlink" title="查询表products"></a>查询表products</h2><h3 id="俩次排序（默认是Asc升序）"><a href="#俩次排序（默认是Asc升序）" class="headerlink" title="俩次排序（默认是Asc升序）"></a>俩次排序（默认是Asc升序）</h3><pre><code>SELECT prod_price, prod_id, prod_name FROM  products 
-ORDER BY prod_price desc,prod_name;</code></pre><h3 id="并列条件查询用and"><a href="#并列条件查询用and" class="headerlink" title="并列条件查询用and"></a>并列条件查询用and</h3><pre><code>select * 
-from products 
-where prod_price &lt;5 and vend_id &lt;&gt; &apos;DLL01&apos; 
-order by prod_price desc;</code></pre><h2 id="查询平均成绩-忽略为null的行"><a href="#查询平均成绩-忽略为null的行" class="headerlink" title="查询平均成绩(忽略为null的行)"></a>查询平均成绩(忽略为null的行)</h2><pre><code>select avg(prod_price) from products;</code></pre><h2 id="查询平均成绩，列名为均价"><a href="#查询平均成绩，列名为均价" class="headerlink" title="查询平均成绩，列名为均价"></a>查询平均成绩，列名为均价</h2><pre><code>select avg(prod_price) as 均价 from products;</code></pre><h2 id="查询产品名非空的行数"><a href="#查询产品名非空的行数" class="headerlink" title="查询产品名非空的行数"></a>查询产品名非空的行数</h2><pre><code>select prod_name, count(*) 
-from products
-group by prod_name 
-having count(*)&gt;=2;</code></pre><h2 id="创建表vendors"><a href="#创建表vendors" class="headerlink" title="创建表vendors"></a>创建表vendors</h2><pre><code>CREATE TABLE vendors
-(vendor_id VARCHAR(255), vend_name VARCHAR(255), 
-vend_address VARCHAR(255), vend_city VARCHAR(255), 
-vend_state VARCHAR(255), vend_zip VARCHAR(255), 
-vend_country VARCHAR(255)
-); </code></pre><h2 id="插入数据-3"><a href="#插入数据-3" class="headerlink" title="插入数据"></a>插入数据</h2><pre><code>INSERT INTO vendors VALUES(&apos;BRS01&apos;,&apos;Bear R US&apos;,&apos;123 main street&apos;,&apos;bear town&apos;,&apos;MI&apos;,&apos;471023&apos;, &apos;USA&apos;);</code></pre><h2 id="两表-oderitems和orders-联查"><a href="#两表-oderitems和orders-联查" class="headerlink" title="两表(oderitems和orders)联查"></a>两表(oderitems和orders)联查</h2><pre><code>select a.order_num,prod_id,quantity,item_price, order_date,cust_id
-from orderitems as a INNER JOIN orders as b
-where a.order_num = b.order_num;</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/21/sql语句/">展开全文 >></a>
         </p>
       
 

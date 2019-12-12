@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>JSP知识点整理 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JSP知识点整理一、JSP技术  jsp脚本和注释jsp脚本： 1）&amp;lt;%java代码%&amp;gt; ----- 内部的java代码翻译到service方法的内部 2）&amp;lt;%=java变量或表达式&amp;gt; ----- 会被翻译成service方法内部out.print() 3）&amp;lt;%!java代码%&amp;gt; ---- 会被翻译成servlet的成员的内容  jsp注释：  不同的注释可见范">
+  <meta name="description" content="JSP知识点整理一、JSP技术  jsp脚本和注释jsp脚本： 1）&amp;lt;%java代码%&amp;gt; —– 内部的java代码翻译到service方法的内部2）&amp;lt;%=java变量或表达式&amp;gt; —– 会被翻译成service方法内部out.print()3）&amp;lt;%!java代码%&amp;gt; —- 会被翻译成servlet的成员的内容   jsp注释：  不同的注释可见范围是不同 1）Ht">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JSP知识点整理">
 <meta property="og:url" content="http://yoursite.com/2019/12/12/JSP知识点整理/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="JSP知识点整理一、JSP技术  jsp脚本和注释jsp脚本： 1）&amp;lt;%java代码%&amp;gt; ----- 内部的java代码翻译到service方法的内部 2）&amp;lt;%=java变量或表达式&amp;gt; ----- 会被翻译成service方法内部out.print() 3）&amp;lt;%!java代码%&amp;gt; ---- 会被翻译成servlet的成员的内容  jsp注释：  不同的注释可见范">
+<meta property="og:description" content="JSP知识点整理一、JSP技术  jsp脚本和注释jsp脚本： 1）&amp;lt;%java代码%&amp;gt; —– 内部的java代码翻译到service方法的内部2）&amp;lt;%=java变量或表达式&amp;gt; —– 会被翻译成service方法内部out.print()3）&amp;lt;%!java代码%&amp;gt; —- 会被翻译成servlet的成员的内容   jsp注释：  不同的注释可见范围是不同 1）Ht">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-12T07:43:16.028Z">
+<meta property="og:updated_time" content="2019-12-12T07:50:54.330Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSP知识点整理">
-<meta name="twitter:description" content="JSP知识点整理一、JSP技术  jsp脚本和注释jsp脚本： 1）&amp;lt;%java代码%&amp;gt; ----- 内部的java代码翻译到service方法的内部 2）&amp;lt;%=java变量或表达式&amp;gt; ----- 会被翻译成service方法内部out.print() 3）&amp;lt;%!java代码%&amp;gt; ---- 会被翻译成servlet的成员的内容  jsp注释：  不同的注释可见范">
+<meta name="twitter:description" content="JSP知识点整理一、JSP技术  jsp脚本和注释jsp脚本： 1）&amp;lt;%java代码%&amp;gt; —– 内部的java代码翻译到service方法的内部2）&amp;lt;%=java变量或表达式&amp;gt; —– 会被翻译成service方法内部out.print()3）&amp;lt;%!java代码%&amp;gt; —- 会被翻译成servlet的成员的内容   jsp注释：  不同的注释可见范围是不同 1）Ht">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -177,9 +177,8 @@
         <h2 id="JSP知识点整理"><a href="#JSP知识点整理" class="headerlink" title="JSP知识点整理"></a>JSP知识点整理</h2><p>一、JSP技术</p>
 <ol>
 <li><p>jsp脚本和注释<br>jsp脚本：</p>
-<pre><code>1）&lt;%java代码%&gt; ----- 内部的java代码翻译到service方法的内部
-2）&lt;%=java变量或表达式&gt; ----- 会被翻译成service方法内部out.print()
-3）&lt;%!java代码%&gt; ---- 会被翻译成servlet的成员的内容</code></pre></li>
+<p>1）&lt;%java代码%&gt; —– 内部的java代码翻译到service方法的内部<br>2）&lt;%=java变量或表达式&gt; —– 会被翻译成service方法内部out.print()<br>3）&lt;%!java代码%&gt; —- 会被翻译成servlet的成员的内容</p>
+</li>
 </ol>
 <p>jsp注释：  不同的注释可见范围是不同</p>
 <pre><code>1）Html注释：&lt;!--注释内容--&gt; ---可见范围 jsp源码、翻译后的servlet、页面 显示html源码
@@ -210,9 +209,7 @@
 <ol start="4">
 <li><p>jsp内置/隐式对象（9个）</p>
 <p> jsp被翻译成servlet之后，service方法中有9个对象定义并初始化完毕，我们在jsp 脚本中可以直接使用这9个对象</p>
-<pre><code>(1) session   (2)request     (3)response       (4)config
-(5) out        (6)page      (7)application      (8)pageContext
-(9) exception</code></pre><p>(1)out对象</p>
+<p>  (1) session   (2)request     (3)response       (4)config<br>  (5) out        (6)page      (7)application      (8)pageContext<br>  (9) exception<br>(1)out对象</p>
 <p> out的类型：JspWriter</p>
 <p> out作用：向客户端输出内容—-out.write()</p>
 <p> out缓冲区默认8kb 可以设置成0 代表关闭out缓冲区 内容直接写到respons缓冲 器；buffer=0kb，代表关闭out缓冲区;</p>
@@ -406,6 +403,15 @@ pageContext - WEB开发中的pageContext.</code></pre><p>$(pageContext.request.c
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/12/12/过滤器代码/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          过滤器代码
+        
+      </div>
+    </a>
   
   
     <a href="/2019/12/12/AJAX介绍和详细代码/" id="article-nav-older" class="article-nav-link-wrap">
